@@ -8,12 +8,12 @@
   <meta name="theme-color" content="#ecdcd6">
   <!-- Vista previa al compartir por WhatsApp / redes -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://invitamos.github.io/mariela-y-diego-/">
+  <meta property="og:url" content="https://yessicaaraceli101.github.io/bodadiegoymariela/">
   <meta property="og:title" content="Diego &amp; Mariela">
   <meta property="og:description" content="Llegó el día 🤍💍 ¡Nos casamos y queremos contar con tu presencia! Ingresando al siguiente enlace vas a poder ver la invitación completa y confirmar tu asistencia.">
-  <meta property="og:image" content="https://invitamos.github.io/mariela-y-diego-/assets/compartir-ancho.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
+  <meta property="og:image" content="https://yessicaaraceli101.github.io/bodadiegoymariela/assets/compartir-magia.jpg">
+  <meta property="og:image:width" content="900">
+  <meta property="og:image:height" content="900">
   <meta property="og:image:type" content="image/jpeg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -94,7 +94,6 @@
 
     <!-- ============ GALERÍA ============ -->
     <section class="seccion seccion--galeria" aria-roledescription="carrusel" aria-label="Fotos de Diego y Mariela">
-      <h2 class="titular titular--chico revela">Nuestros momentos</h2>
       <div class="carrusel revela" id="carrusel">
         <div class="carrusel__pista" id="pista"></div>
         <button class="carrusel__flecha carrusel__flecha--izq" id="ant" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
@@ -135,26 +134,16 @@
 
     <!-- ============ REGALOS ============ -->
     <section class="seccion seccion--regalo">
-      <h2 class="titular titular--chico revela">Un detalle</h2>
-      <p class="texto texto--centro revela" id="textoRegalo"></p>
-      <svg class="sobre-regalo revela" viewBox="0 0 320 170" aria-hidden="true">
-        <defs><filter id="sombra" x="-10%" y="-10%" width="120%" height="140%"><feDropShadow dx="0" dy="6" stdDeviation="7" flood-color="#6b5d45" flood-opacity=".16"/></filter></defs>
-        <g filter="url(#sombra)">
-          <rect x="10" y="10" width="300" height="140" rx="4" fill="#f8f4ea"/>
-          <path d="M10 14 L160 92 L310 14" fill="none" stroke="#e6dfcf" stroke-width="1.5"/>
-          <rect x="146" y="10" width="20" height="140" fill="#a9b56a"/>
-          <rect x="10" y="70" width="300" height="16" fill="#a9b56a"/>
-          <path d="M156 78 C124 46 104 62 118 76 C126 84 146 82 156 78 C166 82 186 84 194 76 C208 62 188 46 156 78Z" fill="#b8c47a" stroke="#8f9d52" stroke-width="1.2"/>
-          <path d="M156 78 L130 118 M156 78 L182 118" stroke="#a9b56a" stroke-width="9" stroke-linecap="round"/>
-          <circle cx="156" cy="78" r="8" fill="#97a558"/>
-        </g>
+      <svg class="icono-regalo revela" viewBox="0 0 120 110" aria-hidden="true">
+        <path d="M14 38h92v16H14zM20 54h80v50H20z"/>
+        <path d="M60 38v66M52 38v66"/>
+        <path d="M56 38c-6-10-22-26-30-18-6 6 4 16 30 18zM56 38c6-12 20-30 30-22 7 6-2 18-30 22z"/>
+        <path d="M56 38c-2 10-10 18-16 26M56 38c4 8 4 18 2 26"/>
       </svg>
-      <div class="acciones revela">
-        <button class="boton" id="verCuenta">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8" width="17" height="12" rx="1.5"/><path d="M2.5 8h19M12 8v12M12 8C10 4 6 4.5 7.5 7c.6 1 2.5 1 4.5 1M12 8c2-4 6-3.5 4.5-1-.6 1-2.5 1-4.5 1"/></svg>
-          Ver datos de la cuenta
-        </button>
-      </div>
+      <h2 class="titular titular--regalo revela">¡Tu presencia es<br>el mejor regalo!</h2>
+      <p class="texto texto--centro revela" id="textoRegalo"></p>
+      <div class="datos-banco revela" id="datosBanco"></div>
+      <button class="enlace revela" id="copiarAlias" type="button">Copiar alias</button>
     </section>
 
     <!-- ============ CONFIRMACIÓN ============ -->
@@ -187,15 +176,6 @@
       <p class="hashtag" id="hashtag"></p>
     </footer>
   </main>
-
-  <!-- ============ MODAL CUENTA ============ -->
-  <dialog id="modalCuenta" class="modal">
-    <form method="dialog" class="modal__caja deckle">
-      <h3 class="titular titular--chico">Datos de la cuenta</h3>
-      <dl id="datosCuenta"></dl>
-      <button class="boton boton--ancho" value="cerrar">Cerrar</button>
-    </form>
-  </dialog>
 
   <div class="aviso" id="aviso" role="status" aria-live="polite"></div>
 

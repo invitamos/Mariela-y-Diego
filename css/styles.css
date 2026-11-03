@@ -637,3 +637,21 @@ main { overflow-x: hidden; }
 @media (max-width: 480px) {
   .wa-flotante { left: 12px; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); font-size: 1rem; padding: .5rem 1rem .5rem .6rem; }
 }
+
+/* ---------- Regalo directo ---------- */
+.icono-regalo { width: 120px; height: auto; display: block; margin: 0 auto 1.4rem; fill: none; stroke: var(--oliva); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.titular--regalo { font-size: clamp(1.9rem, 7.5vw, 2.4rem); }
+.datos-banco {
+  display: inline-block; margin: 1rem auto 0; padding: 1rem 2rem;
+  border: 1px solid var(--oliva-claro); background: rgba(255,255,255,.35);
+  font-family: var(--f-display); font-size: 1.15rem; letter-spacing: .04em; line-height: 1.7; color: var(--tinta);
+}
+.datos-banco p { margin: 0; }
+.seccion--regalo .enlace { display: block; margin: .9rem auto 0; }
+
+/* ---------- Carrusel más chico ---------- */
+.seccion--galeria { padding-top: 2rem; padding-bottom: 2rem; }
+.carrusel { width: min(72vw, 300px); margin: 0 auto; padding: 8px; }
+.carrusel__flecha { width: 32px; height: 32px; }
+.carrusel__flecha svg { width: 17px; }
+.carrusel__flecha--izq { left: 12px; } .carrusel__flecha--der { right: 12px; }

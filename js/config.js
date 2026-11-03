@@ -65,7 +65,7 @@ window.INVITACION = {
   },
 
   regalo: {
-    texto: "Tu presencia es nuestro mejor regalo. Si deseas tener un detalle con nosotros, aquí tienes nuestra cuenta. También habrá un buzón para la lluvia de sobres.",
+    texto: "Pero si deseas acompañarnos con algún detalle, dejamos a disposición nuestros datos bancarios para transferencias.",
     datos: [
       { etiqueta: "Banco", valor: "Banco Familiar" },
       { etiqueta: "Alias", valor: "0985198784" }

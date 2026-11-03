@@ -244,17 +244,15 @@
 
   // Regalo
   $("#textoRegalo").textContent = C.regalo.texto;
-  const iconoCopiar = `<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>`;
-  $("#datosCuenta").innerHTML = C.regalo.datos.map(d =>
-    `<div class="fila"><dt>${d.etiqueta}</dt><dd>${d.valor}<button type="button" class="copiar" data-copiar="${d.valor}" aria-label="Copiar ${d.etiqueta}">${iconoCopiar}</button></dd></div>`).join("");
-  const modal = $("#modalCuenta");
-  $("#verCuenta").addEventListener("click", () => modal.showModal ? modal.showModal() : modal.setAttribute("open", ""));
-  modal.addEventListener("click", e => { if (e.target === modal) modal.close(); });
-  $("#datosCuenta").addEventListener("click", async e => {
-    const b = e.target.closest("[data-copiar]"); if (!b) return;
-    try { await navigator.clipboard.writeText(b.dataset.copiar); aviso("Copiado"); }
-    catch { aviso("No se pudo copiar; mantén presionado el texto"); }
-  });
+  $("#datosBanco").innerHTML = C.regalo.datos.map(d =>
+    d.etiqueta === "Banco" ? `<p>${d.valor}</p>` : `<p>${d.etiqueta}: ${d.valor}</p>`).join("");
+  const alias = (C.regalo.datos.find(d => /alias/i.test(d.etiqueta)) || {}).valor;
+  if (alias) {
+    $("#copiarAlias").addEventListener("click", async () => {
+      try { await navigator.clipboard.writeText(alias); aviso("Alias copiado"); }
+      catch { aviso("Mantén presionado el alias para copiarlo"); }
+    });
+  } else $("#copiarAlias").remove();
 
   // Confirmación
   $("#fechaLimite").textContent = C.confirmacion.fechaLimite;
