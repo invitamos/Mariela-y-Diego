@@ -684,3 +684,24 @@ main { overflow-x: hidden; }
 .guirnalda--carrusel-arriba { top: -102px; width: 150%; }
 .guirnalda--carrusel-abajo { bottom: -111px; width: 140%; }
 .seccion--galeria .carrusel__puntos { margin-top: 7.6rem; }
+
+/* frase: la guirnalda no tapa el título */
+.guirnalda--frase { top: 10px; width: min(88%, 330px); }
+.tarjeta--frase { padding-top: 9.6rem; }
+
+/* rosas blancas en el sobre */
+.guirnalda--sobre-1, .guirnalda--sobre-2 { position: absolute; margin: 0; pointer-events: none; filter: drop-shadow(0 6px 8px rgba(70,60,40,.16)); }
+.guirnalda--sobre-1 { top: -40px; left: -90px; width: min(80vw, 380px); transform: rotate(-32deg); }
+.guirnalda--sobre-2 { bottom: -30px; right: -90px; width: min(80vw, 380px); transform: rotate(148deg); }
+.sobre .cinta { display: none; }
+.sobre { transition: opacity 1s ease .9s, visibility 0s linear 1.9s; }
+@media (max-width: 480px) {
+  .guirnalda--sobre-1 { top: -30px; left: -80px; width: 280px; }
+  .guirnalda--sobre-2 { bottom: -20px; right: -80px; width: 280px; }
+}
+.guirnalda--sobre-1 { top: -10px; left: -50px; width: min(80vw, 460px); }
+.guirnalda--sobre-2 { bottom: -10px; right: -50px; width: min(80vw, 460px); }
+@media (max-width: 480px) {
+  .guirnalda--sobre-1 { top: -8px; left: -52px; width: 270px; }
+  .guirnalda--sobre-2 { bottom: -4px; right: -52px; width: 270px; }
+}
