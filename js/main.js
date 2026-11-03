@@ -367,6 +367,7 @@
   }
   $("#guirnalda").innerHTML = guirnalda(false);
   $("#guirnalda2").innerHTML = guirnalda(true);
+  $$("[data-guirnalda]").forEach(el => { el.innerHTML = guirnalda(el.dataset.guirnalda === "compacta"); });
 
   $("#waFlotante").href = `https://wa.me/${C.confirmacion.whatsapp}?text=${encodeURIComponent(`¡Hola ${C.novio} y ${C.novia}! 💛`)}`;
   if (C.fotoCierre) {

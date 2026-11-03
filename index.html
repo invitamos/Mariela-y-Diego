@@ -85,19 +85,24 @@
     <!-- ============ FRASE ============ -->
     <section class="seccion" id="frase">
       <article class="tarjeta deckle tarjeta--frase revela">
-        <div class="ramita ramita--frase" data-rama='{"hojas":7,"olivas":2,"modo":"relleno"}' aria-hidden="true"></div>
+        <div class="guirnalda guirnalda--frase" data-guirnalda="completa" aria-hidden="true"></div>
         <figure class="foto-frase" id="fotoFrase" hidden></figure>
         <h2 class="titular">Y ahora,<br><em>para siempre</em></h2>
         <p class="texto" id="textoFrase"></p>
+        <div class="guirnalda guirnalda--frase-abajo" data-guirnalda="compacta" aria-hidden="true"></div>
       </article>
     </section>
 
     <!-- ============ GALERÍA ============ -->
     <section class="seccion seccion--galeria" aria-roledescription="carrusel" aria-label="Fotos de Diego y Mariela">
-      <div class="carrusel revela" id="carrusel">
+      <div class="carrusel-marco revela">
+      <div class="guirnalda guirnalda--carrusel-arriba" data-guirnalda="compacta" aria-hidden="true"></div>
+      <div class="carrusel" id="carrusel">
         <div class="carrusel__pista" id="pista"></div>
         <button class="carrusel__flecha carrusel__flecha--izq" id="ant" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
         <button class="carrusel__flecha carrusel__flecha--der" id="sig" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+      </div>
+      <div class="guirnalda guirnalda--carrusel-abajo" data-guirnalda="completa" aria-hidden="true"></div>
       </div>
       <div class="carrusel__puntos" id="puntos" role="tablist"></div>
     </section>

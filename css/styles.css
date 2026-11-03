@@ -664,3 +664,23 @@ main { overflow-x: hidden; }
 .cierre { padding-bottom: calc(6rem + env(safe-area-inset-bottom, 0px)); }
 .cierre { padding-top: 0; }
 .guirnalda--abajo { margin-top: .6rem; }
+
+/* ---------- Rosas en la frase ---------- */
+.tarjeta--frase { overflow: visible; padding-top: 4.2rem; }
+.guirnalda--frase { position: absolute; top: -58px; left: 50%; transform: translateX(-50%); width: 108%; margin: 0; z-index: 2; }
+.guirnalda--frase-abajo { width: 62%; margin: 1.2rem auto -.4rem; transform: scaleY(-1); }
+.seccion#frase { padding-top: 6rem; }
+
+/* ---------- Carrusel más chico y decorado ---------- */
+.carrusel-marco { position: relative; width: min(62vw, 240px); margin: 3.2rem auto 0; }
+.carrusel-marco .carrusel { width: 100%; }
+.guirnalda--carrusel-arriba { position: absolute; top: -44px; left: 50%; transform: translateX(-50%); width: 150%; margin: 0; z-index: 2; }
+.guirnalda--carrusel-abajo { position: absolute; bottom: -62px; left: 50%; transform: translateX(-50%) scaleY(-1); width: 175%; margin: 0; z-index: 2; }
+.seccion--galeria .carrusel__puntos { margin-top: 4.4rem; }
+/* ajustes: las flores enmarcan sin tapar */
+.tarjeta--frase { padding-top: 7.4rem; }
+.guirnalda--frase { top: 6px; width: 92%; }
+.carrusel-marco { margin-top: 6rem; }
+.guirnalda--carrusel-arriba { top: -102px; width: 150%; }
+.guirnalda--carrusel-abajo { bottom: -111px; width: 140%; }
+.seccion--galeria .carrusel__puntos { margin-top: 7.6rem; }
