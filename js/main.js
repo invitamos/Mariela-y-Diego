@@ -304,6 +304,70 @@
   })();
 
   $("#hashtag").textContent = C.hashtag;
+  /* ---------------- Guirnalda de olivo y rosas blancas ---------------- */
+  function guirnalda(compacta) {
+    const id = "g" + Math.random().toString(36).slice(2, 7);
+    const hoja = "M0 0 C12 -9 38 -10 56 0 C38 10 12 9 0 0Z";
+    let ramas = "";
+    // dos ramas que salen del centro hacia los costados
+    [[-1], [1]].forEach(([lado]) => {
+      const P0 = [180, 96], P1 = [180 + lado * 70, 60], P2 = [180 + lado * 165, 92];
+      const pt = t => [0, 1].map(i => (1 - t) ** 2 * P0[i] + 2 * (1 - t) * t * P1[i] + t * t * P2[i]);
+      const tg = t => [0, 1].map(i => 2 * (1 - t) * (P1[i] - P0[i]) + 2 * t * (P2[i] - P1[i]));
+      ramas += `<path d="M${P0} Q${P1} ${P2}" fill="none" stroke="#7d8a4e" stroke-width="1.6" stroke-linecap="round"/>`;
+      const n = compacta ? 8 : 11;
+      for (let i = 0; i < n; i++) {
+        const t = 0.16 + (i / (n - 1)) * 0.82;
+        const [x, y] = pt(t), [dx, dy] = tg(t);
+        const base = Math.atan2(dy, dx) * 180 / Math.PI;
+        const s = i % 2 ? 1 : -1;
+        const esc = (1 - t * .45) * (compacta ? .7 : .85);
+        ramas += `<g transform="translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${(base + s * 34).toFixed(1)}) scale(${esc.toFixed(2)})">
+          <path d="${hoja}" fill="url(#${id}h${i % 3})"/><path d="M3 0H50" stroke="rgba(255,255,255,.35)" stroke-width=".8"/></g>`;
+      }
+      // olivas
+      [0.42, 0.7].forEach((t, k) => {
+        const [x, y] = pt(t), [dx, dy] = tg(t), n2 = Math.hypot(dx, dy), s = k % 2 ? 1 : -1;
+        const ox = x + (-dy / n2) * 10 * s, oy = y + (dx / n2) * 10 * s;
+        ramas += `<path d="M${x.toFixed(1)} ${y.toFixed(1)}L${ox.toFixed(1)} ${oy.toFixed(1)}" stroke="#7d8a4e"/>
+          <ellipse cx="${ox.toFixed(1)}" cy="${oy.toFixed(1)}" rx="5.5" ry="7" fill="url(#${id}v)"/>
+          <ellipse cx="${(ox - 1.6).toFixed(1)}" cy="${(oy - 2.6).toFixed(1)}" rx="1.5" ry="2" fill="#fff" opacity=".45"/>`;
+      });
+    });
+    // rosa blanca
+    const petalo = "M0 0 C-17 -5 -22 -29 0 -33 C22 -29 17 -5 0 0Z";
+    function rosa(x, y, e, giro) {
+      let p = "";
+      for (let k = 0; k < 5; k++) p += `<path d="${petalo}" transform="rotate(${giro + k * 72})" fill="url(#${id}p1)" stroke="#d9d0b9" stroke-width=".8"/>`;
+      for (let k = 0; k < 5; k++) p += `<path d="${petalo}" transform="rotate(${giro + 36 + k * 72}) scale(.7)" fill="url(#${id}p2)" stroke="#d4cab1" stroke-width=".9"/>`;
+      for (let k = 0; k < 4; k++) p += `<path d="${petalo}" transform="rotate(${giro + 20 + k * 90}) scale(.45)" fill="url(#${id}p2)" stroke="#cfc4a9" stroke-width="1.1"/>`;
+      p += `<circle r="6.5" fill="#efe8d6"/>
+        <path d="M-5 -1 C-5 -8 5 -8 5 -1 C5 4 -3 5 -3 0 C-3 -3 1.5 -4 1.5 -1" fill="none" stroke="#c9bd9f" stroke-width="1.2" stroke-linecap="round"/>`;
+      return `<g transform="translate(${x} ${y}) scale(${e})" filter="url(#${id}s)">${p}</g>`;
+    }
+    const rosas = compacta
+      ? rosa(180, 92, .62, 10)
+      : rosa(138, 100, .6, 25) + rosa(222, 100, .6, -15) + rosa(180, 88, .82, 5);
+    // hojitas sueltas entre las rosas
+    const extras = compacta ? "" :
+      `<g transform="translate(112 112) rotate(150) scale(.6)"><path d="${hoja}" fill="url(#${id}h0)"/></g>
+       <g transform="translate(248 112) rotate(30) scale(.6)"><path d="${hoja}" fill="url(#${id}h1)"/></g>
+       <g transform="translate(160 122) rotate(115) scale(.5)"><path d="${hoja}" fill="url(#${id}h2)"/></g>
+       <g transform="translate(200 122) rotate(65) scale(.5)"><path d="${hoja}" fill="url(#${id}h0)"/></g>`;
+    return `<svg viewBox="0 0 360 160" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="${id}h0" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#a5b07a"/><stop offset="1" stop-color="#6f7d48"/></linearGradient>
+        <linearGradient id="${id}h1" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#c3c9a0"/><stop offset="1" stop-color="#8b9765"/></linearGradient>
+        <linearGradient id="${id}h2" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#b6bd8c"/><stop offset="1" stop-color="#7c8855"/></linearGradient>
+        <radialGradient id="${id}v" cx=".35" cy=".3"><stop offset="0" stop-color="#d6e07a"/><stop offset=".7" stop-color="#9fb03c"/><stop offset="1" stop-color="#7d8f2c"/></radialGradient>
+        <radialGradient id="${id}p1" cx=".5" cy="1" r="1"><stop offset="0" stop-color="#e8e0cb"/><stop offset=".55" stop-color="#fbf8ef"/><stop offset="1" stop-color="#ffffff"/></radialGradient>
+        <radialGradient id="${id}p2" cx=".5" cy="1" r="1"><stop offset="0" stop-color="#e2d9c1"/><stop offset=".6" stop-color="#f8f4e8"/><stop offset="1" stop-color="#ffffff"/></radialGradient>
+        <filter id="${id}s" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2.5" stdDeviation="2.5" flood-color="#6b5d45" flood-opacity=".22"/></filter>
+      </defs>${ramas}${extras}${rosas}</svg>`;
+  }
+  $("#guirnalda").innerHTML = guirnalda(false);
+  $("#guirnalda2").innerHTML = guirnalda(true);
+
   $("#waFlotante").href = `https://wa.me/${C.confirmacion.whatsapp}?text=${encodeURIComponent(`¡Hola ${C.novio} y ${C.novia}! 💛`)}`;
   if (C.fotoCierre) {
     const fig = $("#fotoCierre"), img = new Image();

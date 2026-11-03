@@ -656,3 +656,11 @@ main { overflow-x: hidden; }
 .carrusel__flecha { width: 32px; height: 32px; }
 .carrusel__flecha svg { width: 17px; }
 .carrusel__flecha--izq { left: 12px; } .carrusel__flecha--der { right: 12px; }
+
+/* ---------- Guirnalda del cierre ---------- */
+.guirnalda { width: min(92vw, 420px); margin: 0 auto .4rem; }
+.guirnalda svg { width: 100%; height: auto; display: block; overflow: visible; }
+.guirnalda--abajo { width: min(70vw, 300px); margin: 1.4rem auto 0; transform: scaleY(-1); }
+.cierre { padding-bottom: calc(6rem + env(safe-area-inset-bottom, 0px)); }
+.cierre { padding-top: 0; }
+.guirnalda--abajo { margin-top: .6rem; }
