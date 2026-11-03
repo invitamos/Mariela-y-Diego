@@ -134,14 +134,20 @@
 
     <!-- ============ REGALOS ============ -->
     <section class="seccion seccion--regalo">
-      <svg class="icono-regalo revela" viewBox="0 0 120 110" aria-hidden="true">
-        <path d="M14 38h92v16H14zM20 54h80v50H20z"/>
-        <path d="M60 38v66M52 38v66"/>
-        <path d="M56 38c-6-10-22-26-30-18-6 6 4 16 30 18zM56 38c6-12 20-30 30-22 7 6-2 18-30 22z"/>
-        <path d="M56 38c-2 10-10 18-16 26M56 38c4 8 4 18 2 26"/>
-      </svg>
-      <h2 class="titular titular--regalo revela">¡Tu presencia es<br>el mejor regalo!</h2>
+      <h2 class="titular titular--chico revela">Un detalle</h2>
       <p class="texto texto--centro revela" id="textoRegalo"></p>
+      <svg class="sobre-regalo revela" viewBox="0 0 320 170" aria-hidden="true">
+        <defs><filter id="sombra" x="-10%" y="-10%" width="120%" height="140%"><feDropShadow dx="0" dy="6" stdDeviation="7" flood-color="#6b5d45" flood-opacity=".16"/></filter></defs>
+        <g filter="url(#sombra)">
+          <rect x="10" y="10" width="300" height="140" rx="4" fill="#f8f4ea"/>
+          <path d="M10 14 L160 92 L310 14" fill="none" stroke="#e6dfcf" stroke-width="1.5"/>
+          <rect x="146" y="10" width="20" height="140" fill="#a9b56a"/>
+          <rect x="10" y="70" width="300" height="16" fill="#a9b56a"/>
+          <path d="M156 78 C124 46 104 62 118 76 C126 84 146 82 156 78 C166 82 186 84 194 76 C208 62 188 46 156 78Z" fill="#b8c47a" stroke="#8f9d52" stroke-width="1.2"/>
+          <path d="M156 78 L130 118 M156 78 L182 118" stroke="#a9b56a" stroke-width="9" stroke-linecap="round"/>
+          <circle cx="156" cy="78" r="8" fill="#97a558"/>
+        </g>
+      </svg>
       <div class="datos-banco revela" id="datosBanco"></div>
       <button class="enlace revela" id="copiarAlias" type="button">Copiar alias</button>
     </section>

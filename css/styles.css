@@ -638,15 +638,16 @@ main { overflow-x: hidden; }
   .wa-flotante { left: 12px; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); font-size: 1rem; padding: .5rem 1rem .5rem .6rem; }
 }
 
-/* ---------- Regalo directo ---------- */
-.icono-regalo { width: 120px; height: auto; display: block; margin: 0 auto 1.4rem; fill: none; stroke: var(--oliva); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
-.titular--regalo { font-size: clamp(1.9rem, 7.5vw, 2.4rem); }
+/* ---------- Datos bancarios a la vista ---------- */
 .datos-banco {
-  display: inline-block; margin: 1rem auto 0; padding: 1rem 2rem;
-  border: 1px solid var(--oliva-claro); background: rgba(255,255,255,.35);
-  font-family: var(--f-display); font-size: 1.15rem; letter-spacing: .04em; line-height: 1.7; color: var(--tinta);
+  width: min(100%, 320px); margin: 1.6rem auto 0; padding: 1.1rem 1.4rem;
+  background: #fdfbf6; border-radius: 16px;
+  box-shadow: 0 10px 24px -14px rgba(80,70,50,.4), inset 0 0 0 1px var(--linea);
 }
-.datos-banco p { margin: 0; }
+.datos-banco__fila { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: .45rem 0; }
+.datos-banco__fila + .datos-banco__fila { border-top: 1px dashed #ddd4bf; }
+.datos-banco__fila span { font-style: italic; color: var(--tinta-suave); font-size: 1.05rem; }
+.datos-banco__fila b { font-family: var(--f-texto); font-weight: 600; font-size: 1.3rem; color: var(--tinta); letter-spacing: .02em; font-variant-numeric: lining-nums tabular-nums; }
 .seccion--regalo .enlace { display: block; margin: .9rem auto 0; }
 
 /* ---------- Carrusel más chico ---------- */

@@ -245,7 +245,7 @@
   // Regalo
   $("#textoRegalo").textContent = C.regalo.texto;
   $("#datosBanco").innerHTML = C.regalo.datos.map(d =>
-    d.etiqueta === "Banco" ? `<p>${d.valor}</p>` : `<p>${d.etiqueta}: ${d.valor}</p>`).join("");
+    `<div class="datos-banco__fila"><span>${d.etiqueta}</span><b>${d.valor}</b></div>`).join("");
   const alias = (C.regalo.datos.find(d => /alias/i.test(d.etiqueta)) || {}).valor;
   if (alias) {
     $("#copiarAlias").addEventListener("click", async () => {
