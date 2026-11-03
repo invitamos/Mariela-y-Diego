@@ -44,7 +44,7 @@ window.INVITACION = {
   fotoCierre: "",
 
   // Música de fondo (vacío = se oculta el botón de sonido)
-  musica: "assets/musica.mp3", // Canon en Re de Pachelbel (arreglo para arpa y cuerdas)
+  musica: "assets/musica.m4a", // Canon en Re de Pachelbel (arreglo para arpa y cuerdas)
 
   programa: [
     { hora: "20:30", titulo: "Ceremonia", detalle: "Parroquia Virgen del Rosario" },
