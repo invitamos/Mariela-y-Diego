@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Diego &amp; Mariela · Nos casamos</title>
+  <meta name="description" content="Llegó el día 🤍💍 ¡Nos casamos y queremos contar con tu presencia!">
+  <meta name="theme-color" content="#ecdcd6">
+  <!-- Vista previa al compartir por WhatsApp / redes -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://invitamos.github.io/mariela-y-diego-/">
+  <meta property="og:title" content="Diego &amp; Mariela">
+  <meta property="og:description" content="Llegó el día 🤍💍 ¡Nos casamos y queremos contar con tu presencia! Ingresando al siguiente enlace vas a poder ver la invitación completa y confirmar tu asistencia.">
+  <meta property="og:image" content="https://invitamos.github.io/mariela-y-diego-/assets/compartir-ancho.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Pinyon+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bloqueado">
+
+  <!-- ============ SOBRE (pantalla de apertura) ============ -->
+  <div id="sobre" class="sobre" role="dialog" aria-label="Abrir invitación">
+    <div class="ramita ramita--esquina" data-rama='{"hojas":9,"olivas":3,"modo":"relleno"}' aria-hidden="true"></div>
+
+    <div class="puerta-marco">
+      <div class="puerta puerta--izq">
+        <div class="puerta__cara deckle">
+          <div class="puerta__rama" data-rama='{"hojas":11,"olivas":3,"modo":"linea"}' aria-hidden="true"></div>
+        </div>
+      </div>
+      <div class="puerta puerta--der">
+        <div class="puerta__cara deckle">
+          <div class="puerta__rama espejo" data-rama='{"hojas":11,"olivas":3,"modo":"linea"}' aria-hidden="true"></div>
+        </div>
+      </div>
+      <button id="sello" class="sello" aria-label="Romper el sello y abrir la invitación">
+        <span class="sello__cera" aria-hidden="true"></span>
+        <span class="sello__iniciales" aria-hidden="true">D<i>&amp;</i>M</span>
+      </button>
+    </div>
+
+    <p class="sobre__pista">Toca el sello para abrir</p>
+    <svg class="cinta" viewBox="0 0 260 120" aria-hidden="true">
+      <path d="M0 95 C60 60 90 110 140 80 S220 20 260 40 L260 62 C220 44 190 98 140 104 S50 90 0 118Z" fill="#b9c08f"/>
+      <path d="M0 95 C60 60 90 110 140 80 S220 20 260 40" fill="none" stroke="#a3ab76" stroke-width="1"/>
+    </svg>
+  </div>
+
+  <!-- ============ BOTÓN DE MÚSICA ============ -->
+  <button id="musica" class="musica" aria-label="Activar música" hidden>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path class="onda" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12"/></svg>
+  </button>
+  <audio id="audio" loop preload="none"></audio>
+
+  <!-- ============ WHATSAPP FLOTANTE ============ -->
+  <a id="waFlotante" class="wa-flotante" target="_blank" rel="noopener" aria-label="Ir al chat de WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2c2 1.1 4.3 1.7 6.6 1.7 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.4c-2.1 0-4.1-.6-5.8-1.6l-.4-.2-3.8 1.2 1.2-3.7-.3-.4c-1.2-1.7-1.8-3.8-1.8-5.9C5.1 10 10 5.2 16 5.2S26.9 10 26.9 15.8 22 26.4 16 26.4zm6-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8 0 1.6 1.2 3.2 1.4 3.4.2.2 2.3 3.5 5.6 4.9.8.3 1.4.5 1.9.7.8.2 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>
+    <span>Ir al chat</span>
+  </a>
+
+  <main id="invitacion">
+
+    <!-- ============ PORTADA ============ -->
+    <section class="portada">
+      <picture class="portada__foto" id="portadaFoto"></picture>
+      <div class="portada__velo" aria-hidden="true"></div>
+      <div class="ramita ramita--portada" data-rama='{"hojas":8,"olivas":3,"modo":"relleno"}' aria-hidden="true"></div>
+      <div class="portada__texto">
+        <h1 class="portada__nombres"><span id="n1">Diego</span> <span class="portada__y">&amp;</span> <span id="n2">Mariela</span></h1>
+        <p class="portada__casamos">¡Nos casamos!</p>
+        <p class="portada__fecha" id="fechaCorta"></p>
+      </div>
+      <a href="#frase" class="desliza" aria-label="Desplazarse hacia abajo">
+        <span>Desliza</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </a>
+    </section>
+
+    <!-- ============ FRASE ============ -->
+    <section class="seccion" id="frase">
+      <article class="tarjeta deckle tarjeta--frase revela">
+        <div class="ramita ramita--frase" data-rama='{"hojas":7,"olivas":2,"modo":"relleno"}' aria-hidden="true"></div>
+        <figure class="foto-frase" id="fotoFrase" hidden></figure>
+        <h2 class="titular">Y ahora,<br><em>para siempre</em></h2>
+        <p class="texto" id="textoFrase"></p>
+      </article>
+    </section>
+
+    <!-- ============ GALERÍA ============ -->
+    <section class="seccion seccion--galeria" aria-roledescription="carrusel" aria-label="Fotos de Diego y Mariela">
+      <h2 class="titular titular--chico revela">Nuestros momentos</h2>
+      <div class="carrusel revela" id="carrusel">
+        <div class="carrusel__pista" id="pista"></div>
+        <button class="carrusel__flecha carrusel__flecha--izq" id="ant" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
+        <button class="carrusel__flecha carrusel__flecha--der" id="sig" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+      </div>
+      <div class="carrusel__puntos" id="puntos" role="tablist"></div>
+    </section>
+
+    <!-- ============ FECHA ============ -->
+    <section class="seccion seccion--fecha">
+      <h2 class="titular titular--verde revela">Un día<br>que ya es nuestro</h2>
+      <div class="calendario deckle revela" id="calendario"></div>
+      <p class="guion revela">Cada vez falta menos</p>
+      <div class="cuenta revela" id="cuenta" aria-live="polite">
+        <div><b data-u="d">0</b><small>días</small></div>
+        <div><b data-u="h">00</b><small>horas</small></div>
+        <div><b data-u="m">00</b><small>min</small></div>
+        <div><b data-u="s">00</b><small>seg</small></div>
+      </div>
+      <div class="acciones revela">
+        <a class="boton" id="agendarGoogle" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>
+          Agendar en Google
+        </a>
+      </div>
+    </section>
+
+    <!-- ============ CEREMONIA Y RECEPCIÓN ============ -->
+    <section class="seccion seccion--eventos">
+      <div class="eventos" id="eventos"></div>
+    </section>
+
+    <!-- ============ PROGRAMA ============ -->
+    <section class="seccion">
+      <h2 class="titular titular--chico revela">El programa</h2>
+      <ol class="programa" id="programa"></ol>
+    </section>
+
+    <!-- ============ REGALOS ============ -->
+    <section class="seccion seccion--regalo">
+      <h2 class="titular titular--chico revela">Un detalle</h2>
+      <p class="texto texto--centro revela" id="textoRegalo"></p>
+      <svg class="sobre-regalo revela" viewBox="0 0 320 170" aria-hidden="true">
+        <defs><filter id="sombra" x="-10%" y="-10%" width="120%" height="140%"><feDropShadow dx="0" dy="6" stdDeviation="7" flood-color="#6b5d45" flood-opacity=".16"/></filter></defs>
+        <g filter="url(#sombra)">
+          <rect x="10" y="10" width="300" height="140" rx="4" fill="#f8f4ea"/>
+          <path d="M10 14 L160 92 L310 14" fill="none" stroke="#e6dfcf" stroke-width="1.5"/>
+          <rect x="146" y="10" width="20" height="140" fill="#a9b56a"/>
+          <rect x="10" y="70" width="300" height="16" fill="#a9b56a"/>
+          <path d="M156 78 C124 46 104 62 118 76 C126 84 146 82 156 78 C166 82 186 84 194 76 C208 62 188 46 156 78Z" fill="#b8c47a" stroke="#8f9d52" stroke-width="1.2"/>
+          <path d="M156 78 L130 118 M156 78 L182 118" stroke="#a9b56a" stroke-width="9" stroke-linecap="round"/>
+          <circle cx="156" cy="78" r="8" fill="#97a558"/>
+        </g>
+      </svg>
+      <div class="acciones revela">
+        <button class="boton" id="verCuenta">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8" width="17" height="12" rx="1.5"/><path d="M2.5 8h19M12 8v12M12 8C10 4 6 4.5 7.5 7c.6 1 2.5 1 4.5 1M12 8c2-4 6-3.5 4.5-1-.6 1-2.5 1-4.5 1"/></svg>
+          Ver datos de la cuenta
+        </button>
+      </div>
+    </section>
+
+    <!-- ============ CONFIRMACIÓN ============ -->
+    <section class="seccion seccion--rsvp" id="rsvp">
+      <h2 class="titular revela">Una carta<br><em>de vuelta</em></h2>
+      <p class="texto texto--centro revela">Nos ayudarías mucho confirmando tu asistencia antes del <b id="fechaLimite"></b>.</p>
+
+      <form class="carta deckle revela" id="formRsvp" novalidate>
+        <label class="campo">
+          <span>Tu nombre</span>
+          <input type="text" name="nombre" autocomplete="name" required placeholder="Nombre y apellido">
+        </label>
+        <p class="error" id="errorRsvp" role="alert"></p>
+        <p class="carta__pregunta">¿Nos acompañas?</p>
+        <div class="respuestas">
+          <button class="boton" type="submit" value="si">Sí, allí estaré</button>
+          <button class="boton boton--claro" type="submit" value="no">No podré ir</button>
+        </div>
+        <p class="carta__nota">Se abrirá WhatsApp con tu respuesta lista para enviar.</p>
+      </form>
+    </section>
+
+    <!-- ============ CIERRE ============ -->
+    <footer class="cierre">
+      <figure class="foto-cierre" id="fotoCierre" hidden>
+        <div class="ramita ramita--cierre-foto" data-rama='{"hojas":8,"olivas":3,"modo":"relleno"}' aria-hidden="true"></div>
+      </figure>
+      <p class="guion guion--grande">Te esperamos</p>
+      <p class="nombres nombres--cierre"><span class="n1"></span> <span class="nombres__y">&amp;</span> <span class="n2"></span></p>
+      <p class="hashtag" id="hashtag"></p>
+    </footer>
+  </main>
+
+  <!-- ============ MODAL CUENTA ============ -->
+  <dialog id="modalCuenta" class="modal">
+    <form method="dialog" class="modal__caja deckle">
+      <h3 class="titular titular--chico">Datos de la cuenta</h3>
+      <dl id="datosCuenta"></dl>
+      <button class="boton boton--ancho" value="cerrar">Cerrar</button>
+    </form>
+  </dialog>
+
+  <div class="aviso" id="aviso" role="status" aria-live="polite"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
