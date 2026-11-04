@@ -705,3 +705,8 @@ main { overflow-x: hidden; }
   .guirnalda--sobre-1 { top: -8px; left: -52px; width: 270px; }
   .guirnalda--sobre-2 { bottom: -4px; right: -52px; width: 270px; }
 }
+
+/* ---------- Programa con rosas y anillos ---------- */
+.guirnalda--programa { width: min(92vw, 380px); margin: 0 auto .6rem; }
+.guirnalda--programa-abajo { width: min(70vw, 260px); margin: 1.8rem auto 0; transform: scaleY(-1); }
+.guirnalda--programa-abajo.visto { transform: scaleY(-1); }

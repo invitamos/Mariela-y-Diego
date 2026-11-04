@@ -47,7 +47,7 @@ window.INVITACION = {
   musica: "assets/musica.m4a", // Canon en Re de Pachelbel (arreglo para arpa y cuerdas)
 
   programa: [
-    { hora: "20:30", titulo: "Ceremonia", detalle: "Parroquia Virgen del Rosario" },
+    { hora: "20:30", titulo: "Ceremonia", detalle: "Parroquia Virgen del Rosario / Itacurubí de la Cordillera." },
     { hora: "21:00", titulo: "Recepción & Brindis", detalle: "En el salón, para celebrar juntos" }
   ],
 

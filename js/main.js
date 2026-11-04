@@ -273,6 +273,7 @@
   (function carrusel() {
     const fotos = C.galeria || [];
     const caja = $("#carrusel"), pista = $("#pista"), puntos = $("#puntos");
+    if (!caja) return;
     if (!fotos.length) { caja.closest("section").remove(); return; }
     pista.innerHTML = fotos.map((src, i) =>
       `<figure class="carrusel__foto${i === 0 ? " activa" : ""}" aria-roledescription="foto" aria-label="${i + 1} de ${fotos.length}">
@@ -305,7 +306,7 @@
 
   $("#hashtag").textContent = C.hashtag;
   /* ---------------- Guirnalda de olivo y rosas blancas ---------------- */
-  function guirnalda(compacta) {
+  function guirnalda(compacta, conAnillos) {
     const id = "g" + Math.random().toString(36).slice(2, 7);
     const hoja = "M0 0 C12 -9 38 -10 56 0 C38 10 12 9 0 0Z";
     let ramas = "";
@@ -345,7 +346,22 @@
         <path d="M-5 -1 C-5 -8 5 -8 5 -1 C5 4 -3 5 -3 0 C-3 -3 1.5 -4 1.5 -1" fill="none" stroke="#c9bd9f" stroke-width="1.2" stroke-linecap="round"/>`;
       return `<g transform="translate(${x} ${y}) scale(${e})" filter="url(#${id}s)">${p}</g>`;
     }
-    const rosas = compacta
+    const anillos = `<g transform="translate(180 82)" filter="url(#${id}s)">
+        <circle cx="-11" cy="4" r="19" fill="none" stroke="url(#${id}o1)" stroke-width="5.5"/>
+        <circle cx="-11" cy="4" r="19" fill="none" stroke="#fff6d8" stroke-width="1.2" stroke-dasharray="14 40" stroke-dashoffset="-6" opacity=".85"/>
+        <circle cx="11" cy="4" r="19" fill="none" stroke="url(#${id}o2)" stroke-width="4.5"/>
+        <circle cx="11" cy="4" r="19" fill="none" stroke="#fff6d8" stroke-width="1" stroke-dasharray="12 44" stroke-dashoffset="-50" opacity=".85"/>
+        <path d="M-22 -10 A19 19 0 0 1 -6 -14.3" fill="none" stroke="url(#${id}o1)" stroke-width="5.5"/>
+        <g transform="translate(11 -15)">
+          <path d="M-3.5 1 L0 5 L3.5 1Z" fill="#d9b46a"/>
+          <path d="M-7 -4 L-4 -9 L4 -9 L7 -4 L0 4Z" fill="#eef6fb" stroke="#b9cbd6" stroke-width=".7"/>
+          <path d="M-7 -4H7M-4 -9L-2 -4L0 4M4 -9L2 -4L0 4M-2 -4L0 -9L2 -4" fill="none" stroke="#c3d4de" stroke-width=".5"/>
+          <path d="M-3 -8 L-1.5 -5" stroke="#fff" stroke-width="1.2" stroke-linecap="round"/>
+        </g>
+      </g>`;
+    const rosas = conAnillos
+      ? rosa(118, 104, .56, 25) + rosa(242, 104, .56, -15) + anillos
+      : compacta
       ? rosa(180, 92, .62, 10)
       : rosa(138, 100, .6, 25) + rosa(222, 100, .6, -15) + rosa(180, 88, .82, 5);
     // hojitas sueltas entre las rosas
@@ -362,12 +378,14 @@
         <radialGradient id="${id}v" cx=".35" cy=".3"><stop offset="0" stop-color="#d6e07a"/><stop offset=".7" stop-color="#9fb03c"/><stop offset="1" stop-color="#7d8f2c"/></radialGradient>
         <radialGradient id="${id}p1" cx=".5" cy="1" r="1"><stop offset="0" stop-color="#e8e0cb"/><stop offset=".55" stop-color="#fbf8ef"/><stop offset="1" stop-color="#ffffff"/></radialGradient>
         <radialGradient id="${id}p2" cx=".5" cy="1" r="1"><stop offset="0" stop-color="#e2d9c1"/><stop offset=".6" stop-color="#f8f4e8"/><stop offset="1" stop-color="#ffffff"/></radialGradient>
+        <linearGradient id="${id}o1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6dc9a"/><stop offset=".45" stop-color="#c99436"/><stop offset=".7" stop-color="#e9c47a"/><stop offset="1" stop-color="#a87b34"/></linearGradient>
+        <linearGradient id="${id}o2" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbe7b5"/><stop offset=".5" stop-color="#d4a24a"/><stop offset="1" stop-color="#b8893f"/></linearGradient>
         <filter id="${id}s" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="2.5" stdDeviation="2.5" flood-color="#6b5d45" flood-opacity=".22"/></filter>
       </defs>${ramas}${extras}${rosas}</svg>`;
   }
   $("#guirnalda").innerHTML = guirnalda(false);
   $("#guirnalda2").innerHTML = guirnalda(true);
-  $$("[data-guirnalda]").forEach(el => { el.innerHTML = guirnalda(el.dataset.guirnalda === "compacta"); });
+  $$("[data-guirnalda]").forEach(el => { el.innerHTML = guirnalda(el.dataset.guirnalda === "compacta", el.dataset.guirnalda === "anillos"); });
 
   $("#waFlotante").href = `https://wa.me/${C.confirmacion.whatsapp}?text=${encodeURIComponent(`¡Hola ${C.novio} y ${C.novia}! 💛`)}`;
   if (C.fotoCierre) {

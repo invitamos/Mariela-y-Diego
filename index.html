@@ -94,20 +94,6 @@
       </article>
     </section>
 
-    <!-- ============ GALERÍA ============ -->
-    <section class="seccion seccion--galeria" aria-roledescription="carrusel" aria-label="Fotos de Diego y Mariela">
-      <div class="carrusel-marco revela">
-      <div class="guirnalda guirnalda--carrusel-arriba" data-guirnalda="compacta" aria-hidden="true"></div>
-      <div class="carrusel" id="carrusel">
-        <div class="carrusel__pista" id="pista"></div>
-        <button class="carrusel__flecha carrusel__flecha--izq" id="ant" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
-        <button class="carrusel__flecha carrusel__flecha--der" id="sig" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
-      </div>
-      <div class="guirnalda guirnalda--carrusel-abajo" data-guirnalda="completa" aria-hidden="true"></div>
-      </div>
-      <div class="carrusel__puntos" id="puntos" role="tablist"></div>
-    </section>
-
     <!-- ============ FECHA ============ -->
     <section class="seccion seccion--fecha">
       <h2 class="titular titular--verde revela">Un día<br>que ya es nuestro</h2>
@@ -133,9 +119,11 @@
     </section>
 
     <!-- ============ PROGRAMA ============ -->
-    <section class="seccion">
+    <section class="seccion seccion--programa">
+      <div class="guirnalda guirnalda--programa revela" data-guirnalda="anillos" aria-hidden="true"></div>
       <h2 class="titular titular--chico revela">El programa</h2>
       <ol class="programa" id="programa"></ol>
+      <div class="guirnalda guirnalda--programa-abajo revela" data-guirnalda="compacta" aria-hidden="true"></div>
     </section>
 
     <!-- ============ REGALOS ============ -->
@@ -174,7 +162,7 @@
           <button class="boton" type="submit" value="si">Sí, allí estaré</button>
           <button class="boton boton--claro" type="submit" value="no">No podré ir</button>
         </div>
-        <p class="carta__nota">Tu confirmación se enviará el WhatsApp.</p>
+        <p class="carta__nota">Se abrirá WhatsApp con tu respuesta lista para enviar.</p>
       </form>
     </section>
 
@@ -184,7 +172,7 @@
         <div class="ramita ramita--cierre-foto" data-rama='{"hojas":8,"olivas":3,"modo":"relleno"}' aria-hidden="true"></div>
       </figure>
       <div class="guirnalda" id="guirnalda" aria-hidden="true"></div>
-      <p class="guion guion--grande">¡TE ESPERAMOS!</p>
+      <p class="guion guion--grande">Te esperamos</p>
       <p class="nombres nombres--cierre"><span class="n1"></span> <span class="nombres__y">&amp;</span> <span class="n2"></span></p>
       <p class="hashtag" id="hashtag"></p>
       <div class="guirnalda guirnalda--abajo" id="guirnalda2" aria-hidden="true"></div>
